@@ -1,41 +1,27 @@
-"use strict";
 
-// Declaring constant variables to store references to the elements
-// that will be updated by your code.
-const bookAnswerEl = document.getElementById("book-answer")
-const activityAnswerEl = document.getElementById("activity-answer")
-const submissionBtn = document.getElementById("submission-btn")
+const book = "THINK AND GROW RICH"; 
 
 
-// Declare a constant variable named "book" and assign
-// the name of your favorite book to that variable.
+let activity = "PLAYING SOCCER"; 
 
 
-// Declare a mutable variable named "activity" and assign
-// an activity to it.
-
-
-
-function updateBookSentence() {
-    // Sets the text inside the element with the id of book answer. 
-    // innerText is one of many properties on a HTML element.
-    bookAnswerEl.innerText = book
+function updateActivitySentence(newActivity) {
+    activity = newActivity; 
+    render(); 
 }
 
-function updateActivitySentence() {
-    // Update this function 
-    // (hint: it will be similiar to the previous function)
-
-}
 
 function render() {
-    // Finish writing this function
-    updateBookSentence();
-
+    
+    document.getElementById("book-answer").innerText = book;
+    document.getElementById("activity-answer").innerText = activity;
 }
 
-submissionBtn.addEventListener("click", function () {
-    // Calling the function that renders the update
-    // when the button is clicked
-    render();
-})
+
+document.getElementById("submission-btn").addEventListener("click", function () {
+   
+    updateActivitySentence("Reading books");
+});
+
+
+render();
